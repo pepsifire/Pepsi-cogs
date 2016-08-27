@@ -1,8 +1,8 @@
 {
-    "AUTHOR" : "\"Same\"",
-    "DESCRIPTION" : "\"specify the string it's looking for in the with quotes and then pass image variable what you want it to say. Works with text too.\"",
+    "AUTHOR" : "Same",
+    "DESCRIPTION" : "Specify the string it's looking for in the with quotes and then pass image variable what you want it to say. Works with text too.",
     "DISABLED" : false,
-    "INSTALL_MSG" : "\"Thank you for installing this fine piece of coding.\"",
-    "NAME" : "\"Chat Responder\"",
-    "SHORT" : "\"Responds to chat messages, you can add your own.\""
+    "INSTALL_MSG" : "Thank you for installing this fine piece of coding.",
+    "NAME" : "Chat Responder",
+    "SHORT" : "Responds to chat messages, you can add your own."
 }
