@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "\"Same\"",
+    "DESCRIPTION" : "\"Creates a nice looking bot invite message. The file has all the usable variables (owner one not used) if you want to modify the message. Bot asks for full permissions.\"",
+    "DISABLED" : false,
+    "INSTALL_MSG" : "\"Thank you for installing this fine piece of software.\"",
+    "NAME" : "\"Bot invite link\"",
+    "SHORT" : "\"Creates a nice message with bot's oauth invite link.\""
+}
