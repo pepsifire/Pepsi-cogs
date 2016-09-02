@@ -4,6 +4,11 @@ from cogs.utils.dataIO import dataIO, fileIO
 from cogs.utils import checks
 import os
 import random
+try:
+    from tabulate import tabulate
+    tabulateAvailable = True
+except:
+    tabulateAvailable = False
 
 default_quotes = {'sparta': "THIS IS SPARTA!", 'cake': "The cake is a lie."}
 
@@ -26,7 +31,7 @@ class QuoteGenerator:
         """Add quotes"""
         self.quotes[name] = quote
         await self.bot.say("Added \"" + quote + "\" to quotes.")
-        dataIO.save_json("data/quote_generator/quotes.json", self.quotes)  # Todo make this nicer
+        dataIO.save_json("data/quote_generator/quotes.json", self.quotes)
 
     @commands.command()
     @checks.is_owner()
@@ -37,9 +42,10 @@ class QuoteGenerator:
         await self.bot.say("Quote \"" + name + "\" deleted.")
 
     @commands.command()
-    async def listquotes(self):
+    async def listquote(self):
         """List quotes"""
-        await self.bot.say(self.quotes)
+        tabulated_list = tabulate({"Name": self.quotes.keys(), "Quotes": self.quotes.values()}, headers='keys', tablefmt='simple')
+        await self.bot.say("```\n" + tabulated_list + "```\n")  # Todo make this nicer
 
 
 def check_folders():
@@ -56,6 +62,9 @@ def check_files():
 
 
 def setup(bot):
-    check_folders()
-    check_files()
-    bot.add_cog(QuoteGenerator(bot))
+        if tabulateAvailable:
+            check_folders()
+            check_files()
+            bot.add_cog(QuoteGenerator(bot))
+        else:
+            raise RuntimeError("You need to run `pip3 install tabulate`")
