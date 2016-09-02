@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Same",
+    "DESCRIPTION" : "Add quotes to the bot.",
+    "DISABLED" : false,
+    "INSTALL_MSG" : "Thank you for installing this great piece of software.",
+    "NAME" : "Quote Generator",
+    "SHORT" : "Generates quotes."
+}
