@@ -36,16 +36,16 @@ class QuoteGenerator:
     @commands.command()
     @checks.is_owner()
     async def delquote(self, name: str):
-        """Delete quotes"""
+        """Delete quotes. Get the quote name with "[p]listquotes" """
         del self.quotes[name]
         dataIO.save_json("data/quote_generator/quotes.json", self.quotes)
         await self.bot.say("Quote \"" + name + "\" deleted.")
 
     @commands.command()
-    async def listquote(self):
+    async def listquotes(self):
         """List quotes"""
-        tabulated_list = tabulate({"Name": self.quotes.keys(), "Quotes": self.quotes.values()}, headers='keys', tablefmt='simple')
-        await self.bot.say("```\n" + tabulated_list + "```\n")  # Todo make this nicer
+        tabulated_list = tabulate({"Name": self.quotes.keys(), "Quote": self.quotes.values()}, headers='keys', tablefmt='simple')
+        await self.bot.say("```\n" + tabulated_list + "```\n")
 
 
 def check_folders():
