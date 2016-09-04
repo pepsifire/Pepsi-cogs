@@ -1,7 +1,7 @@
 import discord
 
 
-class MultiImage:
+class chat_responder:
     """Cures eye cancer and does other things"""
 
     def __init__(self, bot):
@@ -20,6 +20,6 @@ class MultiImage:
 
 
 def setup(bot):
-    n = MultiImage(bot)
+    n = chat_responder(bot)
     bot.add_listener(n.not_static, "on_message")
     bot.add_cog(n)
