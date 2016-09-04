@@ -4,6 +4,7 @@ from cogs.utils.dataIO import dataIO, fileIO
 from cogs.utils import checks
 import os
 import random
+from __main__ import send_cmd_help
 try:
     from tabulate import tabulate
     tabulateAvailable = True
@@ -25,24 +26,33 @@ class QuoteGenerator:
         """Spits out quotes"""
         await self.bot.say(random.choice(list(self.quotes.values())))
 
-    @commands.command()
+    @commands.group(name="setquote", pass_context=True)
+    async def _setquote(self, ctx):
+        """Quote list management"""
+        if ctx.invoked_subcommand is None:
+            await send_cmd_help(ctx)
+
+    @_setquote.command(pass_context=True, no_pm=True)
     @checks.is_owner()
-    async def addquote(self, name: str, quote: str):
+    async def add(self, ctx, name: str, quote: str):
         """Add quotes"""
         self.quotes[name] = quote
         await self.bot.say("Added \"" + quote + "\" to quotes.")
         dataIO.save_json("data/quote_generator/quotes.json", self.quotes)
 
-    @commands.command()
+    @_setquote.command(pass_context=True, no_pm=True)
     @checks.is_owner()
-    async def delquote(self, name: str):
+    async def delete(self, ctx, name: str):
         """Delete quotes. Get the quote name with "[p]listquotes" """
-        del self.quotes[name]
-        dataIO.save_json("data/quote_generator/quotes.json", self.quotes)
-        await self.bot.say("Quote \"" + name + "\" deleted.")
+        try:  # If it's empty python raises KeyError.
+            del self.quotes[name]
+            dataIO.save_json("data/quote_generator/quotes.json", self.quotes)
+            await self.bot.say("Quote \"" + name + "\" deleted.")
+        except KeyError:
+            await self.bot.say("```Delete quotes. Get the quote name with \"[p]listquotes\" ```")
 
     @commands.command()
-    async def listquotes(self):
+    async def quotelist(self):
         """List quotes"""
         tabulated_list = tabulate({"Name": self.quotes.keys(), "Quote": self.quotes.values()}, headers='keys', tablefmt='simple')
         await self.bot.say("```\n" + tabulated_list + "```\n")
