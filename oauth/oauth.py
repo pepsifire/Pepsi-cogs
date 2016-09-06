@@ -1,14 +1,15 @@
 import discord
 from discord.ext import commands
 
-class Invite_bot:
+
+class InviteBot:
     """Does stuff"""
 
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
-    async def Invite(self):
+    async def invite(self):
         """Get oauth url"""
         perms = discord.Permissions().all()
         data = await self.bot.application_info()
@@ -25,4 +26,4 @@ class Invite_bot:
 
 
 def setup(bot):
-    bot.add_cog(Invite_bot(bot))
+    bot.add_cog(InviteBot(bot))

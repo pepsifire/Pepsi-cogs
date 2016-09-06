@@ -1,10 +1,11 @@
-import discord
-from discord.ext import commands
-from cogs.utils.dataIO import dataIO, fileIO
-from cogs.utils import checks
 import os
 import random
+
 from __main__ import send_cmd_help
+from cogs.utils import checks
+from cogs.utils.dataIO import dataIO, fileIO
+from discord.ext import commands
+
 try:
     from tabulate import tabulate
     tabulateAvailable = True
