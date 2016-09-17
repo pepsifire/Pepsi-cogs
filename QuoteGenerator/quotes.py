@@ -8,6 +8,7 @@ from discord.ext import commands
 
 try:
     from tabulate import tabulate
+
     tabulateAvailable = True
 except:
     tabulateAvailable = False
@@ -55,7 +56,8 @@ class QuoteGenerator:
     @commands.command()
     async def quotelist(self):
         """List quotes"""
-        tabulated_list = tabulate({"Name": self.quotes.keys(), "Quote": self.quotes.values()}, headers='keys', tablefmt='simple')
+        tabulated_list = tabulate({"Name": self.quotes.keys(), "Quote": self.quotes.values()}, headers='keys',
+                                  tablefmt='simple')
         await self.bot.say("```\n" + tabulated_list + "```\n")
 
 
@@ -73,9 +75,9 @@ def check_files():
 
 
 def setup(bot):
-        if tabulateAvailable:
-            check_folders()
-            check_files()
-            bot.add_cog(QuoteGenerator(bot))
-        else:
-            raise RuntimeError("You need to run `pip3 install tabulate`")
+    if tabulateAvailable:
+        check_folders()
+        check_files()
+        bot.add_cog(QuoteGenerator(bot))
+    else:
+        raise RuntimeError("You need to run `pip3 install tabulate`")

@@ -19,7 +19,7 @@ class DiscordStatus:
         """Get Discord Status"""
 
         url = "https://status.discordapp.com/"
-        async with aiohttp.get(url) as response:
+        async with aiohttp.ClientSession(loop=None).get(url) as response:
             soupObject = BeautifulSoup(await response.text(), 'html.parser')
             try:
                 status = soupObject.find(class_='unresolved-incident impact-none').get_text()
