@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Same",
+    "DESCRIPTION" : "Prune members",
+    "DISABLED" : false,
+    "INSTALL_MSG" : "Thank you for installing.",
+    "NAME" : "Pruner",
+    "SHORT" : "Pruner"
+}
