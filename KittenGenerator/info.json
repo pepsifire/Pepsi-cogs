@@ -1,8 +1,8 @@
 {
     "AUTHOR" : "Same",
-    "DESCRIPTION" : "Kittens!",
+    "DESCRIPTION" : "Kittens! (and cats)",
     "DISABLED" : false,
     "INSTALL_MSG" : "Thank you for installing.",
-    "NAME" : "Kitten Generator",
-    "SHORT" : "Kittens"
+    "NAME" : "Kitten (and cat) Generator",
+    "SHORT" : "Kittens (and cats)"
 }

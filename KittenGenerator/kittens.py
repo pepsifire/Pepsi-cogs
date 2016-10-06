@@ -4,14 +4,14 @@ import aiohttp
 
 
 class KittenGenerator:
-    """Get all the kittens in the world!"""
+    """Get all the kittens (and cats) in the world!"""
 
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
     async def kitten(self):
-        """Kittens."""
+        """Kittens. (and cats)"""
         url = "http://thecatapi.com/api/images/get?format=html&type=jpg"
         async with aiohttp.get(url) as response:
             soupObject = BeautifulSoup(await response.text(), "html.parser")
