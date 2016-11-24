@@ -10,12 +10,15 @@ class Rolelist:
     @commands.command(pass_context=True)
     async def rolelist(self, ctx):
         """List server roles"""
-        data = "```"
-        for r in ctx.message.author.server.roles:
-            data += r.name
-            data += "\n"
-        data += "```"
-        await self.bot.say(data)
+        try:
+            data = "```"
+            for r in ctx.message.author.server.roles:
+                data += r.name
+                data += "\n"
+            data += "```"
+            await self.bot.say(data)
+        except:
+            await self.bot.say("Insufficient permissions.")
 
 
 def setup(bot):

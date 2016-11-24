@@ -19,17 +19,23 @@ class Pruner:
     @_pruner.command(pass_context=True)
     async def check(self, ctx, days_amount: int):
         """Check members to prune based on days"""
-        this_server = ctx.message.author.server
-        prune_amount = await self.bot.estimate_pruned_members(server=this_server, days=days_amount)
-        await self.bot.say("Amount of members that would be pruned: " + str(prune_amount))
+        try:
+            this_server = ctx.message.author.server
+            prune_amount = await self.bot.estimate_pruned_members(server=this_server, days=days_amount)
+            await self.bot.say("Amount of members that would be pruned: " + str(prune_amount))
+        except:
+            await self.bot.say("Insufficient permissions.")
 
     @_pruner.command(pass_context=True)
     async def prune(self, ctx, days_amount: int):
         """Prune members"""
-        this_server = ctx.message.author.server
-        prune_amount = await self.bot.estimate_pruned_members(server=this_server, days=days_amount)  # I'm lazy
-        await self.bot.prune_members(server=this_server, days=days_amount)
-        await self.bot.say(str(prune_amount) + " inactive members pruned.")
+        try:
+            this_server = ctx.message.author.server
+            prune_amount = await self.bot.estimate_pruned_members(server=this_server, days=days_amount)  # I'm lazy
+            await self.bot.prune_members(server=this_server, days=days_amount)
+            await self.bot.say(str(prune_amount) + " inactive members pruned.")
+        except:
+            await self.bot.say("Insufficient permissions.")
 
 
 def setup(bot):
