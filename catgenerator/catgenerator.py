@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 from bs4 import BeautifulSoup
 import aiohttp
@@ -18,7 +19,9 @@ class KittenGenerator:
         try:
             image = soupObject.find('img', src=True)
             kittens = image['src']
-            await self.bot.say(kittens)
+            embed = discord.Embed(description="")
+            embed.set_image(url=kittens)
+            await self.bot.say(embed=embed)
         except:
             await self.bot.say("Error, no kittens found.")
 
