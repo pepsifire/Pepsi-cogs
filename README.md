@@ -6,7 +6,7 @@ https://github.com/Twentysix26/Red-DiscordBot
 
 This is mainly for coding practice so don't expect miracles.
 
-How to install repo: `[p]cog repo add pepsi-cogs https://github.com/pepsifire/Pepsi-cogs`
+How to install repo: Consult the CogManager thingy idk (i'll add this later dont worry)
 
 Contact infos:
 Discord: Same#3094 (creepy looking guy as avatar or peepo)
