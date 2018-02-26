@@ -1,6 +1,6 @@
 {
     "AUTHOR" : "Same",
-    "DESCRIPTION" : "Random cogs i have made for my bot.",
+    "DESCRIPTION" : "Cogs for Red v3",
     "DISABLED" : false,
     "INSTALL_MSG" : "Thank you for installing. At the moment only 3rd party lib required is `tabulate` for QuoteGenerator.",
     "NAME" : "Same's not-so-great-but-working cogs",

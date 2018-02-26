@@ -1,8 +1,0 @@
-{
-    "AUTHOR" : "Same",
-    "DESCRIPTION" : "If something is wrong it (should) output whats wrong. It looks bad as i didn't have time to test it when Discord was actually down.",
-    "DISABLED" : false,
-    "INSTALL_MSG" : "Remember to install beautifulsoup4 with pip!",
-    "NAME" : "Discord Status",
-    "SHORT" : "Get the Discord app's status to see if something is wrong"
-}
