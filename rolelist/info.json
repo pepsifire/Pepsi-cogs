@@ -1,8 +1,0 @@
-{
-    "AUTHOR" : "Same",
-    "DESCRIPTION" : "List server roles.",
-    "DISABLED" : false,
-    "INSTALL_MSG" : "Thank you for installing.",
-    "NAME" : "Rolelist",
-    "SHORT" : "Rolelist"
-}

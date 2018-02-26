@@ -1,8 +1,0 @@
-{
-    "AUTHOR" : "Same",
-    "DESCRIPTION" : "Print info about yourself",
-    "DISABLED" : false,
-    "INSTALL_MSG" : "Thank you for installing.",
-    "NAME" : "AboutMe",
-    "SHORT" : "AboutMe"
-}

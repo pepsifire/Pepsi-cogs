@@ -1,8 +1,0 @@
-{
-    "AUTHOR" : "Same",
-    "DESCRIPTION" : "Can be used to send messages with the bot on any given text channel the bot has access to.",
-    "DISABLED" : false,
-    "INSTALL_MSG" : "Thank you for installing this fine piece of software.",
-    "NAME" : "Message Sender",
-    "SHORT" : "Send a message to any channel on the server."
-}

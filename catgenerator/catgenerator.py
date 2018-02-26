@@ -3,24 +3,22 @@ from discord.ext import commands
 from urllib.request import urlopen
 
 
-class KittenGenerator:
+class CatGenerator:
     """Get all the kittens (and cats) in the world!"""
 
-    def __init__(self, bot):
-        self.bot = bot
+    def __init__(self):
+        self.url = "http://thecatapi.com/api/images/get?format=src&type=jpg"
 
     @commands.command()
-    async def kitten(self):
-        """Kittens. (and cats)"""
-        url = "http://thecatapi.com/api/images/get?format=src&type=jpg"
+    async def cat(self, ctx):
+        """Pictures of cats!"""
+
         try:
-            req = urlopen(url)
-            embed = discord.Embed(description="")
+            req = urlopen(self.url)
+            embed = discord.Embed(description="Cats!")
             embed.set_image(url=req.geturl())
-            await self.bot.say(embed=embed)
+            await ctx.send(embed=embed)
         except:
-            await self.bot.say("Error, no kittens found.")
+            await ctx.send("Error, no kittens found.")
 
 
-def setup(bot):
-    bot.add_cog(KittenGenerator(bot))
