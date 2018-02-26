@@ -1,0 +1,9 @@
+{
+    "author": "Same",
+    "description": "Stores quotes and displays them",
+    "hidden": false,
+    "install_msg": "Thank you for installing!",
+    "short": "Quotes",
+    "tags": "quote",
+    "type": "COG"
+}
